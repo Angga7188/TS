@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Nama Anda</title>
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts untuk tipografi yang lebih baik -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">MyPortfolio</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#table">Data</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-btn" title="Ganti Tema">🌙</button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO / HOME ===== -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Halo, Saya <span class="highlight">Nama Anda</span></h1>
+            <h2>Seorang <em>Web Developer</em> &amp; <u>Desainer</u></h2>
+            <p>
+                Selamat datang di website portofolio pribadi saya. 
+                Saya adalah seorang <strong>mahasiswa</strong> yang passionate 
+                di bidang <em>pengembangan web</em> dan <u>desain antarmuka</u>.
+            </p>
+            <a href="#contact" class="btn btn-primary">Hubungi Saya</a>
+            <button id="greetBtn" class="btn btn-secondary">Sapa Saya 👋</button>
+        </div>
+    </header>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Profil Singkat</h3>
+                <p>
+                    Nama saya <strong>Nama Anda</strong>. Saya memiliki ketertarikan 
+                    besar dalam dunia <em>teknologi</em> terutama <u>web development</u>. 
+                    Saya senang mempelajari hal baru dan membangun proyek-proyek kreatif.
+                </p>
+                <h3>Keahlian</h3>
+                <!-- Unordered List -->
+                <ul class="skill-list">
+                    <li>HTML &amp; CSS</li>
+                    <li>JavaScript</li>
+                    <li>UI/UX Design</li>
+                    <li>Responsive Web Design</li>
+                </ul>
+                <h3>Hobi</h3>
+                <!-- Ordered List -->
+                <ol class="hobby-list">
+                    <li>Fotografi</li>
+                    <li>Coding</li>
+                    <li>Membaca Buku</li>
+                    <li>Traveling</li>
+                </ol>
+            </div>
+            <div class="about-info">
+                <h3>Info Pribadi</h3>
+                <p><strong>Nama:</strong> Nama Anda</p>
+                <p><strong>Email:</strong> email@anda.com</p>
+                <p><strong>Lokasi:</strong> Indonesia</p>
+                <p><strong>Status:</strong> Mahasiswa</p>
+                <p>
+                    Kunjungi juga 
+                    <a href="https://www.google.com" target="_blank" rel="noopener">Google</a> 
+                    atau 
+                    <a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a> saya.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="section section-alt">
+        <h2 class="section-title">Galeri Foto</h2>
+        <p class="section-desc">Beberapa momen dan aktivitas saya.</p>
+        <div class="gallery-grid">
+            <figure class="gallery-item">
+                <!-- Ganti src dengan foto milik Anda -->
+                <img src="foto1.jpg" alt="Foto Selfie" onerror="this.src='https://via.placeholder.com/400x300?text=Foto+Selfie'">
+                <figcaption>Foto Selfie</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="foto2.jpg" alt="Foto Formal" onerror="this.src='https://via.placeholder.com/400x300?text=Foto+Formal'">
+                <figcaption>Foto Formal</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="foto3.jpg" alt="Foto Aktivitas" onerror="this.src='https://via.placeholder.com/400x300?text=Foto+Aktivitas'">
+                <figcaption>Foto Aktivitas</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ===== TABLE ===== -->
+    <section id="table" class="section">
+        <h2 class="section-title">Data Pendidikan &amp; Pengalaman</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tahun</th>
+                        <th>Institusi / Perusahaan</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2020 - 2023</td>
+                        <td>SMA Negeri 1</td>
+                        <td>Jurusan IPA</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2023 - Sekarang</td>
+                        <td>Universitas ABC</td>
+                        <td>Program Studi Informatika</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>2024</td>
+                        <td>PT. Teknologi Maju</td>
+                        <td>Magang Web Developer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <section id="contact" class="section section-alt">
+        <h2 class="section-title">Hubungi Saya</h2>
+        <p class="section-desc">Silakan isi formulir di bawah ini untuk menghubungi saya.</p>
+        <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+                <label for="nama">Nama Lengkap <span class="required">*</span></label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+                <small class="error-msg" id="errorNama"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="nama@email.com">
+                <small class="error-msg" id="errorEmail"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="topik">Topik Keperluan <span class="required">*</span></label>
+                <select id="topik" name="topik">
+                    <option value="">-- Pilih Topik --</option>
+                    <option value="kerjasama">Kerjasama</option>
+                    <option value="pertanyaan">Pertanyaan</option>
+                    <option value="saran">Saran</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+                <small class="error-msg" id="errorTopik"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="pesan">Pesan <span class="required">*</span></label>
+                <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..."></textarea>
+                <small class="error-msg" id="errorPesan"></small>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" id="setuju" name="setuju">
+                    Saya setuju data yang saya isi digunakan untuk keperluan komunikasi.
+                </label>
+                <small class="error-msg" id="errorSetuju"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
+            <p id="formStatus" class="form-status"></p>
+        </form>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>&copy; 2024 Nama Anda. Dibuat dengan <span class="highlight">❤</span> menggunakan HTML, CSS, &amp; JavaScript.</p>
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>

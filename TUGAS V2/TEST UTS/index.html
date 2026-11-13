@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Rangga Nugraha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">MyPortofolio</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#table">Data</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-btn" title="Ganti Tema">🌙</button>
+            <script src="script.js"></script>
+        </div>
+    </nav>
+</body>
+
+<header id="home" class="hero">
+    <div class="hero-content">
+        <h1>Halo, Saya <span class="highlight">Ragga nugraha</span></h1>
+        <h2>Seorang <u>Mahasiswa</u> sistem informasi</h2>
+        <p>Selamat datang di website portofolio saya
+        </p>
+    </div>
+</header>
+
+<section id="about" class="section">
+    <h2 class="section-title">Tentang Saya</h2>
+    <div class="about-grid">
+        <div class="about-text">
+            <h3>Profil Singkat</h3>
+            <p>
+                Nama saya <strong>Rangga Nugraha</strong>. Saya memiliki ketertarikan
+                di bidang <em>teknologi</em>.
+                Terutama di bidang pemrograman.
+            </p>
+            <h3>Keahlian</h3>
+
+            <ul class="skill-list">
+                <li>HTML & CSS</li>
+                <li>Java Script</li>
+                <li>LUA Script</li>
+            </ul>
+        </div>
+        <div class="about-info">
+            <h3>Info Pribadi</h3>
+            <p><strong>Nama:</strong> Rangga Nugraha</p>
+            <p><strong>Email:</strong> raangganugraha@gmail.com</p>
+            <p><strong>Lokasi:</strong> Indonesia</p>
+            <p><strong>Status:</strong> Mahasiswa</p>
+            <p>
+                Kunjungi
+                <a href="https://www.linkedin.com/in/rangga-nugraha-b77a412b6/" target="linkedin.com"
+                    rel="noopener">LinkedIn</a>
+                atau
+                <a href="https://www.github.com/angga7188" target="github.com" rel="noopener">GitHub</a> saya.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="section">
+    <h2 class="section-title">Galeri</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="img1.png" alt="Gambar 1">
+        </div>
+        <div class="gallery-item">
+            <img src="img2.jpg" alt="Gambar 2">
+        </div>
+        <div class="gallery-item">
+            <img src="img3.jpg" alt="Gambar 3">
+        </div>
+</section>
+
+<section id="table" class="section">
+    <h2 class="section-title">Data Pendidikan</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Tahun</th>
+                    <th>Institusi / Perusahaan</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2023 - 2026</td>
+                    <td>SMK PGRI SUBANG</td>
+                    <td>Teknik Jaringan Komputer dan Telekomunikasi</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2026 - Sekarang</td>
+                    <td>Universitas Subang</td>
+                    <td>Program Studi Sistem Informasi</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="contact" class="section section-alt">
+    <h2 class="section-title">Hubungi Saya</h2>
+    <p class="section-desc">Silakan isi formulir di bawah ini untuk menghubungi saya.</p>
+    <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-group">
+            <label for="nama">Nama Lengkap <span class="required">*</span></label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+            <small class="error-msg" id="errorNama"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com">
+            <small class="error-msg" id="errorEmail"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="topik">Topik Keperluan <span class="required">*</span></label>
+            <select id="topik" name="topik">
+                <option value="">-- Pilih Topik --</option>
+                <option value="kerjasama">Kerjasama</option>
+                <option value="pertanyaan">Pertanyaan</option>
+                <option value="saran">Saran</option>
+                <option value="lainnya">Lainnya</option>
+            </select>
+            <small class="error-msg" id="errorTopik"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="pesan">Pesan <span class="required">*</span></label>
+            <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..."></textarea>
+            <small class="error-msg" id="errorPesan"></small>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" id="setuju" name="setuju">
+                Saya setuju data yang saya isi digunakan untuk keperluan komunikasi.
+            </label>
+            <small class="error-msg" id="errorSetuju"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
+        <p id="formStatus" class="form-status"></p>
+    </form>
+</section>

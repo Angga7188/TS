@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <!-- 
+      PENJELASAN ELEMEN HEAD:
+      1. charset="UTF-8": Pengkodean karakter standar universal agar simbol, tanda panah, dan teks aksen terbaca normal.
+      2. meta viewport: KRUSIAL untuk Responsive Web Design.
+         - width=device-width: Mengatur lebar viewport browser mengikuti lebar layar perangkat fisik pengguna (HP, tablet, laptop).
+         - initial-scale=1.0: Menetapkan level zoom awal sebesar 100% tanpa zoom-out otomatis oleh mobile browser.
+      3. link rel="stylesheet": Memisahkan berkas desain (CSS) dari struktur konten (HTML) sesuai prinsip Separation of Concerns.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Desain Web: 3 Pilar Layout Modern</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ===================================================================
+         BAGIAN 1: NAVBAR (HEADER)
+         Pelajaran: Menggunakan elemen semantik <header> dan <nav>.
+         Tata letak: Diatur dengan CSS Flexbox (1 Dimensi Horizontal) 
+         di mana Logo berada di sisi kiri dan Menu tautan berada di sisi kanan.
+         =================================================================== -->
+    <header class="navbar">
+        <!-- Logo Branding -->
+        <div class="logo">
+            <span class="logo-badge">Lab</span> <strong>Layout Web</strong>
+        </div>
+
+        <!-- Tag <nav>: Wadah semantik khusus navigasi situs -->
+        <nav>
+            <!-- 
+              Tag <ul> & <li>: Daftar link navigasi.
+              Di CSS, list-style akan dihilangkan dan diatur dengan display: flex; gap: 20px;
+              Anchor 'href="#id"' menghubungkan tombol langsung ke ID seksi terkait di halaman.
+            -->
+            <ul class="nav-menu">
+                <li><a href="#grid-system">01. Grid 12-Kolom</a></li>
+                <li><a href="#flexbox-demo">02. Flexbox 1D</a></li>
+                <li><a href="#grid2d-demo">03. CSS Grid 2D</a></li>
+                <li><a href="#ringkasan">Perbandingan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===================================================================
+         BAGIAN 2: HERO SECTION
+         Pelajaran: Menggunakan <section> sebagai pembungkus tematik konten pengantar.
+         Tujuan: Membangun hierarki visual yang kuat (Badge -> Judul h1 -> Paragraf p -> Tombol Aksi CTA).
+         =================================================================== -->
+    <section class="hero">
+        <span class="badge">Praktikum Desain Web</span>
+        <h1>Memahami 3 Pilar Tata Letak Web</h1>
+        <p>Jelajahi dan pelajari perbedaan mendasar antara <strong>Sistem Grid 12-Kolom</strong>, <strong>Tata Letak 1D (Flexbox)</strong>, dan <strong>Tata Letak 2D (CSS Grid)</strong> melalui contoh interaktif di bawah ini.</p>
+        
+        <!-- Tombol Aksi (Call To Action): Memberi pilihan cepat kepada pengguna untuk mulai belajar -->
+        <div class="hero-actions">
+            <a href="#grid-system" class="btn btn-primary">Mulai Eksplorasi</a>
+            <a href="#ringkasan" class="btn btn-secondary">Lihat Tabel Perbandingan</a>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         BAGIAN 3: KONTEN UTAMA (MAIN CONTAINER)
+         Pelajaran: Tag <main> menandai area konten utama dokumen (hanya boleh ada 1 per halaman).
+         Class .container membatasi lebar maksimal (max-width) dan memposisikan konten di tengah layar (margin: auto).
+         =================================================================== -->
+    <main class="container">
+
+        <!-- ===============================================================
+             TOPIK 01: SISTEM GRID (12-COLUMN STRUCTURAL GRID)
+             Pelajaran: Grid 12-kolom adalah kerangka kerja pembagian halaman standar industri.
+             =============================================================== -->
+        <section id="grid-system" class="section-card">
+            <!-- Header Penjelasan Seksi -->
+            <div class="section-header">
+                <span class="section-tag tag-purple">01 / STRUCTURAL</span>
+                <h2>Sistem Grid (12-Column Grid System)</h2>
+                <p class="section-desc">
+                    Grid adalah kerangka kerja tak terlihat yang terdiri dari kolom, baris, dan jarak antar kolom (gutters). 
+                    Sistem <strong>12-kolom</strong> adalah standar industri karena angka 12 sangat mudah dibagi rata menjadi pecahan: 
+                    <strong>1/2 (6 kolom)</strong>, <strong>1/3 (4 kolom)</strong>, <strong>1/4 (3 kolom)</strong>, maupun tata letak asimetris (8 + 4).
+                </p>
+            </div>
+
+            <!-- Demo 1A: Blueprint Acuan 12 Kolom Dasar -->
+            <div class="demo-box">
+                <div class="demo-title">
+                    <h4>A. Kerangka Acuan 12 Kolom Dasar (Blueprint)</h4>
+                    <!-- Tag <span> untuk menampilkan kode CSS acuan -->
+                    <span class="css-pill">display: grid; grid-template-columns: repeat(12, 1fr);</span>
+                </div>
+                <!-- 
+                  Wadah .grid-12 ini dibagi menjadi 12 kolom setara.
+                  Masing-masing div .guide-col merepresentasikan 1 kolom tunggal (kolom 1 s/d 12).
+                -->
+                <div class="grid-12 guide-grid">
+                    <div class="guide-col">1</div>
+                    <div class="guide-col">2</div>
+                    <div class="guide-col">3</div>
+                    <div class="guide-col">4</div>
+                    <div class="guide-col">5</div>
+                    <div class="guide-col">6</div>
+                    <div class="guide-col">7</div>
+                    <div class="guide-col">8</div>
+                    <div class="guide-col">9</div>
+                    <div class="guide-col">10</div>
+                    <div class="guide-col">11</div>
+                    <div class="guide-col">12</div>
+                </div>
+            </div>
+
+            <!-- Demo 1B: Kombinasi Pecahan Kolom Umum -->
+            <div class="demo-box">
+                <div class="demo-title">
+                    <h4>B. Kombinasi Pecahan Kolom Umum</h4>
+                    <span class="css-pill">Menggunakan class .col-X (grid-column: span X)</span>
+                </div>
+
+                <!-- Kasus 1: Setengah Halaman (Porsi 50% - 50%) -> 6 Kolom + 6 Kolom = 12 Kolom -->
+                <p class="layout-label">1. Setengah Halaman: 2 Kolom (6 + 6 = 12 Kolom)</p>
+                <div class="grid-12 mb-16">
+                    <div class="col-box col-6 color-purple">
+                        <strong>.col-6</strong> (Porsi 50% - Konten Kiri)
+                    </div>
+                    <div class="col-box col-6 color-purple">
+                        <strong>.col-6</strong> (Porsi 50% - Konten Kanan)
+                    </div>
+                </div>
+
+                <!-- Kasus 2: Sepertiga Halaman (Porsi 33.3% x 3) -> 4 + 4 + 4 = 12 Kolom -->
+                <p class="layout-label">2. Sepertiga Halaman: 3 Kolom (4 + 4 + 4 = 12 Kolom)</p>
+                <div class="grid-12 mb-16">
+                    <div class="col-box col-4 color-purple-light"><strong>.col-4</strong> (33.3%)</div>
+                    <div class="col-box col-4 color-purple-light"><strong>.col-4</strong> (33.3%)</div>
+                    <div class="col-box col-4 color-purple-light"><strong>.col-4</strong> (33.3%)</div>
+                </div>
+
+                <!-- Kasus 3: Seperempat Halaman (Porsi 25% x 4) -> 3 + 3 + 3 + 3 = 12 Kolom -->
+                <p class="layout-label">3. Seperempat Halaman: 4 Kolom (3 + 3 + 3 + 3 = 12 Kolom)</p>
+                <div class="grid-12 mb-16">
+                    <div class="col-box col-3 color-purple-soft"><strong>.col-3</strong> (25%)</div>
+                    <div class="col-box col-3 color-purple-soft"><strong>.col-3</strong> (25%)</div>
+                    <div class="col-box col-3 color-purple-soft"><strong>.col-3</strong> (25%)</div>
+                    <div class="col-box col-3 color-purple-soft"><strong>.col-3</strong> (25%)</div>
+                </div>
+
+                <!-- Kasus 4: Layout Realistis Halaman Berita -> Konten Utama (8 Kolom) + Sidebar (4 Kolom) = 12 Kolom -->
+                <p class="layout-label">4. Tata Letak Nyata Halaman Berita: Konten Utama (8) + Sidebar (4)</p>
+                <div class="grid-12">
+                    <div class="col-box col-8 color-indigo">
+                        <strong>.col-8 (Konten Utama / Artikel)</strong>
+                        <p class="sub-text">Lebar 8 dari 12 kolom untuk teks bacaan yang nyaman.</p>
+                    </div>
+                    <div class="col-box col-4 color-indigo-light">
+                        <strong>.col-4 (Sidebar)</strong>
+                        <p class="sub-text">Lebar 4 dari 12 kolom untuk widget/menu samping.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================================================
+             TOPIK 02: FLEXBOX (TATA LETAK 1 DIMENSI)
+             Pelajaran: Mengatur perataan dan alokasi ruang secara dinamis pada 1 sumbu.
+             Disertai Simulasi Interaktif dengan tombol JavaScript.
+             =============================================================== -->
+        <section id="flexbox-demo" class="section-card">
+            <div class="section-header">
+                <span class="section-tag tag-orange">02 / 1D LAYOUT</span>
+                <h2>Flexbox (Flexible Box Layout)</h2>
+                <p class="section-desc">
+                    Modul CSS untuk tata letak <strong>satu dimensi</strong> (baik baris horizontal <em>atau</em> kolom vertikal).
+                    Keunggulannya adalah mendistribusikan ruang sisa secara dinamis dan menyejajarkan elemen dengan sempurna, bahkan saat ukuran item di dalamnya tidak sama atau tidak diketahui.
+                </p>
+            </div>
+
+            <div class="demo-box">
+                <div class="demo-title">
+                    <h4>Simulasi Interaktif Flexbox</h4>
+                    <span class="css-pill">Uji coba interaktif di bawah: klik tombol untuk melihat perubahan posisi!</span>
+                </div>
+
+                <!-- 
+                  PANEL KONTROL TOMBOL:
+                  Pelajaran JavaScript:
+                  Setiap tombol dilengkapi atribut HTML5 kustom:
+                  - data-prop: Nama properti CSS (misal: justifyContent, alignItems, flexDirection)
+                  - data-val : Nilai properti CSS (misal: space-between, center, row)
+                  Ini memungkinkan JavaScript membaca properti secara dinamis tanpa menulis kode berulang.
+                -->
+                <div class="controls-panel">
+                    <!-- Grup 1: Justify-Content (Perataan Sumbu Utama / Main Axis) -->
+                    <div class="control-group">
+                        <label>Sumbu Sejajar (justify-content):</label>
+                        <div class="btn-group" id="jcButtons">
+                            <button class="control-btn active" data-prop="justifyContent" data-val="space-between">space-between</button>
+                            <button class="control-btn" data-prop="justifyContent" data-val="space-around">space-around</button>
+                            <button class="control-btn" data-prop="justifyContent" data-val="center">center</button>
+                            <button class="control-btn" data-prop="justifyContent" data-val="flex-start">flex-start</button>
+                        </div>
+                    </div>
+
+                    <!-- Grup 2: Align-Items (Perataan Sumbu Silang / Cross Axis) -->
+                    <div class="control-group">
+                        <label>Sumbu Silang (align-items):</label>
+                        <div class="btn-group" id="aiButtons">
+                            <button class="control-btn active" data-prop="alignItems" data-val="center">center</button>
+                            <button class="control-btn" data-prop="alignItems" data-val="flex-start">flex-start</button>
+                            <button class="control-btn" data-prop="alignItems" data-val="flex-end">flex-end</button>
+                            <button class="control-btn" data-prop="alignItems" data-val="stretch">stretch</button>
+                        </div>
+                    </div>
+
+                    <!-- Grup 3: Flex-Direction (Menentukan Arah Sumbu Utama: Baris vs Kolom) -->
+                    <div class="control-group">
+                        <label>Arah Sumbu (flex-direction):</label>
+                        <div class="btn-group" id="fdButtons">
+                            <button class="control-btn active" data-prop="flexDirection" data-val="row">row (Horizontal)</button>
+                            <button class="control-btn" data-prop="flexDirection" data-val="column">column (Vertikal)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                  STAGE SIMULASI FLEX CONTAINER:
+                  Elemen div id="flexStage" ini adalah Flex Container (display: flex).
+                  Item di dalamnya memiliki lebar berbeda untuk mendemonstrasikan bahwa 
+                  Flexbox mampu mendistribusikan elemen tidak seragam secara harmonis.
+                -->
+                <div class="flex-stage-wrapper">
+                    <div id="flexStage" class="flex-stage">
+                        <div class="flex-item flex-item-1">
+                            <div class="item-title">Item A</div>
+                            <span class="item-note">Ukuran Sedang</span>
+                        </div>
+                        <div class="flex-item flex-item-2">
+                            <div class="item-title">Item B (Panjang)</div>
+                            <span class="item-note">Konten Teks Lebih Banyak</span>
+                        </div>
+                        <div class="flex-item flex-item-3">
+                            <div class="item-title">Item C</div>
+                            <span class="item-note">Kecil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 
+                  KOTAK PREVIEW KODE CSS REAL-TIME:
+                  script.js akan memperbarui teks di dalam tag <code> ini secara otomatis
+                  setiap kali mahasiswa menekan salah satu tombol kontrol di atas.
+                -->
+                <div class="code-preview">
+                    <span class="code-label">CSS yang sedang diterapkan ke container:</span>
+                    <pre><code id="flexCodeDisplay">.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================================================
+             TOPIK 03: CSS GRID 2D (TATA LETAK ASIMETRIS / MAJALAH)
+             Pelajaran: Mengontrol baris dan kolom secara simultan.
+             Menunjukkan bahwa 1 elemen dapat membentang melintasi beberapa kolom DAN baris.
+             =============================================================== -->
+        <section id="grid2d-demo" class="section-card">
+            <div class="section-header">
+                <span class="section-tag tag-emerald">03 / 2D LAYOUT</span>
+                <h2>CSS Grid Layout (Tata Letak Majalah / Asimetris)</h2>
+                <p class="section-desc">
+                    Sistem tata letak <strong>dua dimensi</strong> yang bekerja pada baris dan kolom secara bersamaan. 
+                    Sangat unggul untuk desain halaman web yang kompleks dan asimetris seperti majalah (*editorial magazine layout*), di mana satu elemen dapat merentang melintasi beberapa kolom DAN beberapa baris sekaligus.
+                </p>
+            </div>
+
+            <div class="demo-box">
+                <div class="demo-title">
+                    <h4>Contoh Nyata: Tata Letak Editorial Majalah Modern</h4>
+                    <span class="css-pill">display: grid; grid-template-columns: repeat(3, 1fr);</span>
+                </div>
+
+                <!-- 
+                  WADAH GRID MAJALAH (3 Kolom x Multi-Baris):
+                  Perhatikan penggunaan tag semantik:
+                  - <article>: Untuk artikel berita mandiri
+                  - <aside>  : Untuk kolom samping (sidebar opini/tren)
+                -->
+                <div class="magazine-grid">
+                    <!-- 
+                      ITEM 1: BERITA UTAMA (HEADLINE)
+                      CSS: grid-column: span 2; grid-row: span 2;
+                      Menguasai 2 kolom ke samping dan 2 baris ke bawah sekaligus.
+                    -->
+                    <article class="mag-item mag-headline">
+                        <span class="mag-badge">BERITA UTAMA (2 Kolom x 2 Baris)</span>
+                        <h3>Desain Web Modern Berbasis CSS Grid</h3>
+                        <p>Elemen ini menggunakan <code>grid-column: span 2; grid-row: span 2;</code> sehingga menguasai area visual utama secara asimetris.</p>
+                        <div class="mag-meta">Pola ini hampir mustahil dibuat dengan rapi hanya menggunakan Flexbox.</div>
+                    </article>
+
+                    <!-- 
+                      ITEM 2: SIDEBAR OPINI & TREN
+                      CSS: grid-column: span 1; grid-row: span 2;
+                      Menguasai 1 kolom ke samping tetapi membentang 2 baris ke bawah sejajar Headline.
+                    -->
+                    <aside class="mag-item mag-sidebar">
+                        <span class="mag-badge mag-badge-alt">SIDEBAR (1 Kolom x 2 Baris)</span>
+                        <h4>Opini & Tren</h4>
+                        <ul class="mini-news-list">
+                            <li><strong>CSS Subgrid:</strong> Evolusi fleksibilitas hierarki anak.</li>
+                            <li><strong>Fluid Typography:</strong> Skala teks responsif dengan clamp().</li>
+                            <li><strong>Container Queries:</strong> Responsif berbasis komponen.</li>
+                        </ul>
+                    </aside>
+
+                    <!-- 
+                      ITEM 3, 4, 5: TIGA KARTU KECIL DI BARIS KETIGA
+                      Masing-masing kartu otomatis menempati 1 kolom x 1 baris.
+                    -->
+                    <article class="mag-item mag-subcard">
+                        <span class="mag-tag">Kolom 1 / Baris 3</span>
+                        <h4>Desain Responsif</h4>
+                        <p>Tata letak otomatis menyesuaikan ukuran layar tanpa merusak estetika.</p>
+                    </article>
+
+                    <article class="mag-item mag-subcard">
+                        <span class="mag-tag">Kolom 2 / Baris 3</span>
+                        <h4>Aksesibilitas Web</h4>
+                        <p>Memastikan urutan visual di layar tetap ramah bagi screen reader pembaca.</p>
+                    </article>
+
+                    <article class="mag-item mag-subcard">
+                        <span class="mag-tag">Kolom 3 / Baris 3</span>
+                        <h4>Performa CSS</h4>
+                        <p>Kombinasi Grid + Flexbox menghasilkan struktur DOM yang bersih dan cepat.</p>
+                    </article>
+                </div>
+
+                <!-- Cuplikan Kode CSS yang Mengendalikan Bentuk Majalah di Atas -->
+                <div class="code-preview mt-20">
+                    <span class="code-label">Aturan CSS Grid yang Digunakan:</span>
+                    <pre><code>.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Kolom sama besar */
+  gap: 16px;
+}
+.mag-headline {
+  grid-column: span 2; /* Membentang 2 Kolom ke samping */
+  grid-row: span 2;    /* Membentang 2 Baris ke bawah */
+}
+.mag-sidebar {
+  grid-column: span 1; /* 1 Kolom */
+  grid-row: span 2;    /* Membentang 2 Baris ke bawah sejajar headline */
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================================================
+             BAGIAN 04: TABEL RINGKASAN PERBANDINGAN
+             Pelajaran: Merangkum perbedaan konseptual antara Grid 12, Flexbox, dan CSS Grid 2D.
+             =============================================================== -->
+        <section id="ringkasan" class="section-card">
+            <div class="section-header">
+                <span class="section-tag tag-blue">RANGKUMAN DOSEN</span>
+                <h2>Kapan Harus Menggunakan Masing-Masing?</h2>
+                <p class="section-desc">Pedoman praktis untuk mahasiswa dalam menentukan arsitektur layout yang tepat.</p>
+            </div>
+
+            <!-- Wrapper table-responsive: Memungkinkan scrolling horizontal di layar mobile jika tabel terlalu lebar -->
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>01. Sistem Grid 12-Kolom</th>
+                            <th>02. Flexbox (1D)</th>
+                            <th>03. CSS Grid (2D)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dimensi Tata Letak</strong></td>
+                            <td>Struktural (Kolom vertikal)</td>
+                            <td>1 Dimensi (Baris ATAU Kolom)</td>
+                            <td>2 Dimensi (Baris DAN Kolom serentak)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tujuan Utama</strong></td>
+                            <td>Menjaga konsistensi lebar dan proporsi pecahan konten.</td>
+                            <td>Mendistribusikan ruang dan perataan item dalam satu arah.</td>
+                            <td>Membangun arsitektur halaman majalah, dashboard, dan galeri asimetris.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contoh Penggunaan</strong></td>
+                            <td>Standar layout Bootstrap, Tailwind, atau wireframe Figma.</td>
+                            <td>Navbar, baris tombol aksi, card footer, daftar chat.</td>
+                            <td>Halaman artikel majalah, dashboard multi-widget, galeri foto.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kelebihan Kunci</strong></td>
+                            <td>Prediktif dan mudah dibagi (pecahan 12).</td>
+                            <td>Item fleksibel meregang menyesuaikan isi konten.</td>
+                            <td>Bisa menentukan posisi baris dan kolom secara bersamaan (`span`).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================================================================
+         BAGIAN 5: FOOTER
+         Pelajaran: Tag <footer> untuk informasi hak cipta dan metadata dokumen.
+         =================================================================== -->
+    <footer class="footer">
+        <p>&copy; 2026 Modul Ajar Desain Web &bull; Grid System, Flexbox, and CSS Grid Essentials</p>
+    </footer>
+
+    <!-- 
+      PEMANGGILAN SKRIP JAVASCRIPT:
+      Diletakkan tepat sebelum penutup </body> agar browser memproses seluruh HTML 
+      dan elemen-elemen DOM sudah ada di memori sebelum script.js mulai berjalan.
+    -->
+    <script src="script.js"></script>
+</body>
+
+</html>
